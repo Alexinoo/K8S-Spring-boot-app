@@ -21,6 +21,13 @@ spec:
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: k8s
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
       restartPolicy: Always
   selector:
     matchLabels:

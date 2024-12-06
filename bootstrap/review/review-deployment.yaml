@@ -17,10 +17,17 @@ spec:
           image: mwangialex26/reviewms:latest
           imagePullPolicy: Always
           ports:
-            - containerPort: 8083
+            - containerPort: 8082
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: k8s
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "250m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
       restartPolicy: Always
   selector:
     matchLabels:
